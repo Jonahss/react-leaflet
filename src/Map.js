@@ -59,7 +59,7 @@ export default class Map extends MapComponent {
 
   componentDidMount () {
     const props = omit(this.props, ['children', 'className', 'id', 'style'])
-    this.leafletElement = Leaflet.map(this.container, props)
+    window.leaflet = this.leafletElement = Leaflet.map(this.container, props)
     super.componentDidMount()
     this.setState({map: this.leafletElement})
     if (!isUndefined(props.bounds)) {
